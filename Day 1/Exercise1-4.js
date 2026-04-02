@@ -1,13 +1,11 @@
-const inputFileName = "Sound.mp3";
+const inputFileName = "a.mp3";
 
 function getExtension(file) {
     let ex = '';
-    for (let index = file.length; index >= 0; index--) {
+    for (let index = file.length - 1; index >= 0; index--) {
         if (file[index] === ".")
             break;
-        // if (ex) {
-        ex += file[index] + ex;
-        //     s
+        ex = file[index] + ex;
     }
     console.log(ex);
 }
