@@ -1,4 +1,4 @@
-const num = 2017;
+const num = 715;
 const ROMAN_NUMERAL_DICT = [
     { value: 1000, symbol: 'M' },
     { value: 900, symbol: 'CM' },
