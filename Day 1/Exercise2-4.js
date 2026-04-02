@@ -1,5 +1,5 @@
 const arr1 = [10, 3, 5, 6];
-const arr2 = [10, 3, 4, 100];
+const arr2 = [10, 3, 4, 100, 80];
 
 function checkLostElements(arr1, arr2) {
     let result = [];
