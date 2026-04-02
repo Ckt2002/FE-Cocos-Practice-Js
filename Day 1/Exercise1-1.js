@@ -1,4 +1,4 @@
-const inputNum = 1000000;
+const inputNum = 99000;
 
 function formatMoney(money) {
     let moneyStr = money.toString();
