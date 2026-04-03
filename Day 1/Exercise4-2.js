@@ -94,8 +94,6 @@ function readNum(inputNum) {
             result = addTxtToResult(result, VIETNAMESE_READ_DICT.units[temp]);
             result = addTxtToResult(result, VIETNAMESE_READ_DICT.hundred);
         }
-
-        //! Bug here
         else if (result !== '') {
             result = addTxtToResult(result, VIETNAMESE_READ_DICT.units[0]);
             result = addTxtToResult(result, VIETNAMESE_READ_DICT.hundred);
