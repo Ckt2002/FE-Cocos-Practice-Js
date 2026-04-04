@@ -5,17 +5,15 @@ import Books from "./data/books_data.js";
 import { createNewFile, readFile, checkFile } from "./file_json.js";
 
 export default function addBookMenu(callbackToMain) {
-    SetTitle("Add new book", ["Enter 0 to return home or enter book name to add new book"]);
+    SetTitle("Add new book", ["Enter 0 to return or enter book title to add new book"]);
 
-    rl.question('Enter 0 or the book name ', (answer) => {
-        switch (answer) {
+    rl.question('Enter 0 or the book title: ', (input) => {
+        switch (input) {
             case '0':
-                // Find out how to back to library main
                 callbackToMain();
                 break;
             default:
-                addBook(answer);
-                // Save book to json
+                addBook(input);
                 callbackToMain();
                 break;
         }
@@ -36,6 +34,7 @@ function addBook(bookName) {
             books.addBook(newBook);
         }
     }
+
     books.addBook(newBook);
     const jsonContent = JSON.stringify(books, null, '\t');
     createNewFile('Books', jsonContent);

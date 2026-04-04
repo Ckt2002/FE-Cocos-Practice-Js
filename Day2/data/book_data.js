@@ -1,10 +1,11 @@
 export default class Book {
+
     constructor(title) {
         this.id = "id" + Math.random().toString(16).slice(2);
         this.title = title;
     }
 
-    getName() {
+    getTitle() {
         return this.title;
     }
 

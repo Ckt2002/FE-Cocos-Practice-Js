@@ -5,7 +5,7 @@ export default class Books {
 
     addBook(newBook) {
         for (let book of this.books) {
-            if (book.getName() === newBook.getName()) {
+            if (book.getTitle() === newBook.getTitle()) {
                 return;
             }
         }

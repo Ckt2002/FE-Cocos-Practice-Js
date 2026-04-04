@@ -1,6 +1,8 @@
 export default function SetTitle(title, ...arrContents) {
-    console.log(`\n==========${title}==========\n`);
+    console.log(`\n========== ${title} ==========\n`);
+
     arrContents.forEach(element => {
-        console.log(element + '\n');
+        if (element !== null)
+            console.log(element + '\n');
     });
 }

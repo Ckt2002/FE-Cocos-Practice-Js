@@ -1,10 +1,20 @@
-[
-	{
-		"id": "idc7cbd6bf029d88",
-		"title": "new s"
-	},
-	{
-		"id": "idd1afc9e13bef3",
-		"title": "f"
-	}
-]
+{
+	"books": [
+		{
+			"id": "idac010059bdaed",
+			"title": "Trench crusade: The eagle's nest"
+		},
+		{
+			"id": "id29850c9243d0e8",
+			"title": "The Hobbit: An unexpected journey"
+		},
+		{
+			"id": "id6dc8057008bc2",
+			"title": "Warhammer 40k: Siege of Terra"
+		},
+		{
+			"id": "id012392ae85091",
+			"title": "New Game"
+		}
+	]
+}
