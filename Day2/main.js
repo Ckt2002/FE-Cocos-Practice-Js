@@ -19,7 +19,8 @@ function showMainPage() {
         "\nCustomer Actions:",
         "5-Add Customer",
         "\nBorrow Actions:",
-        "6-Add Borrow"
+        "6-Borrow Book",
+        "7-Return Book"
     ]);
 
     rl.question('Choose an action: ', (iput) => {

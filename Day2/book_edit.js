@@ -16,18 +16,13 @@ export default function editBookMenu(callBackToMain) {
     SetTitle("Edit book", booksName);
 
     rl.question('Enter book title (or 0 to cancel): ', (input) => {
-        switch (input) {
-            case '0':
-                callBackToMain();
-                break;
-
-            default:
-                editBookForm(
-                    () => editBookMenu(callBackToMain),
-                    findBook(bookArr, input),
-                    () => saveBook(books));
-                break;
+        if (input !== '0') {
+            editBookForm(
+                () => editBookMenu(callBackToMain),
+                findBook(bookArr, input),
+                () => saveBook(books));
         }
+        callBackToMain();
     });
 }
 
@@ -41,17 +36,11 @@ function editBookForm(callBackToMenu, bookData, saveCallBack) {
     SetTitle(`${bookData.id} - ${bookData.title}`, null);
 
     rl.question('Enter new title (or 0 to cancel): ', (input) => {
-        switch (input) {
-            case '0':
-                callBackToMenu();
-                break;
-
-            default:
-                edit(bookData, input);
-                saveCallBack();
-                callBackToMenu();
-                break;
+        if (input !== '0') {
+            edit(bookData, input);
+            saveCallBack();
         }
+        callBackToMenu();
     });
 }
 

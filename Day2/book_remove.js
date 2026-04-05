@@ -15,20 +15,15 @@ export default function removeBookMenu(callBackToMain) {
 
     SetTitle("Remove book", booksName);
 
-    rl.question('Enter 0 to exit or enter book title to remove: ', (input) => {
-        switch (input) {
-            case '0':
-                callBackToMain();
-                break;
-
-            default:
-                removeConfirm(
-                    () => removeBookMenu(callBackToMain),
-                    bookArr,
-                    findBook(bookArr, input),
-                    () => saveBook(books));
-                break;
+    rl.question('Enter book title (or 0 to cancel): ', (input) => {
+        if (input !== '0') {
+            removeConfirm(
+                () => removeBookMenu(callBackToMain),
+                bookArr,
+                findBook(bookArr, input),
+                () => saveBook(books));
         }
+        callBackToMain();
     });
 }
 
@@ -39,18 +34,12 @@ function removeConfirm(callBackToMenu, booksArr, bookData, saveCallBack) {
         return;
     }
 
-    rl.question('Enter anythings to accept (or n to cancel): ', (input) => {
-        switch (input) {
-            case 'n':
-                callBackToMenu();
-                break;
-
-            default:
-                const index = booksArr.indexOf(bookData);
-                booksArr = booksArr.splice(index, 1);
-                saveCallBack();
-                callBackToMenu();
-                break;
+    rl.question(`Confirm removing ${bookData.title}? (y/n): `, (input) => {
+        if (input === 'y') {
+            const index = booksArr.indexOf(bookData);
+            booksArr = booksArr.splice(index, 1);
+            saveCallBack();
         }
+        callBackToMenu();
     });
 }

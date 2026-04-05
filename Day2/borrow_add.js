@@ -35,16 +35,16 @@ function selectMultipleBooks(customerId, selectedBookIds, callBackToMain) {
     }
     SetTitle("Available books", booksList);
 
-    rl.question('Enter book ID or 0 to finish: ', (bookId) => {
-        if (bookId === '0') {
+    rl.question('Enter book ID or 0 to finish: ', (input) => {
+        if (input === '0') {
             if (selectedBookIds.length === 0) {
                 console.log("No books selected!");
                 callBackToMain();
                 return;
             }
 
-            rl.question(`Confirm borrowing ${selectedBookIds.length} book(s)? (yes/no): `, (confirm) => {
-                if (confirm.toLowerCase() === 'yes' || confirm.toLowerCase() === 'y') {
+            rl.question(`Confirm borrowing ${selectedBookIds.length} book(s)? (y/n): `, (confirm) => {
+                if (confirm === 'y') {
                     addMultipleBorrows(customerId, selectedBookIds);
                     console.log(`${selectedBookIds.length} book(s) borrowed!`);
                 }
@@ -53,20 +53,20 @@ function selectMultipleBooks(customerId, selectedBookIds, callBackToMain) {
             return;
         }
 
-        const selectedBook = bookArr.find(book => book.id === bookId);
+        const selectedBook = bookArr.find(book => book.id === input);
         if (!selectedBook) {
             console.log("Book not found!");
             selectMultipleBooks(customerId, selectedBookIds, callBackToMain);
             return;
         }
 
-        if (selectedBookIds.includes(bookId)) {
+        if (selectedBookIds.includes(input)) {
             console.log("This book is already selected!");
             selectMultipleBooks(customerId, selectedBookIds, callBackToMain);
             return;
         }
 
-        selectedBookIds.push(bookId);
+        selectedBookIds.push(input);
         console.log(`"${selectedBook.title}" added.`);
         selectMultipleBooks(customerId, selectedBookIds, callBackToMain);
     });

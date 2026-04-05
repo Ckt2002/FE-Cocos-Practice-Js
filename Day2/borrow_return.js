@@ -8,13 +8,13 @@ import { createNewFile, readFile, checkFile } from "./file_json.js";
 export default function returnBorrowMenu(callBackToMain) {
     SetTitle("Return books", null);
 
-    rl.question('Enter customer ID (or 0 to cancel): ', (customerId) => {
-        if (customerId === '0') {
+    rl.question('Enter customer ID (or 0 to cancel): ', (input) => {
+        if (input === '0') {
             callBackToMain();
             return;
         }
 
-        displayCustomerBorrows(customerId, callBackToMain);
+        displayCustomerBorrows(input, callBackToMain);
     });
 }
 
@@ -48,8 +48,8 @@ function displayCustomerBorrows(customerId, callBackToMain) {
 }
 
 function selectBorrowsToReturn(customerId, selectedBorrowIds, activeBorrows, callBackToMain) {
-    rl.question('Enter borrow ID to return (or 0 to finish): ', (borrowId) => {
-        if (borrowId === '0') {
+    rl.question('Enter borrow ID to return (or 0 to finish): ', (input) => {
+        if (input === '0') {
             if (selectedBorrowIds.length === 0) {
                 console.log("No books selected for return!");
                 callBackToMain();
@@ -57,7 +57,7 @@ function selectBorrowsToReturn(customerId, selectedBorrowIds, activeBorrows, cal
             }
 
             rl.question(`Confirm returning ${selectedBorrowIds.length} book(s)? (y/n): `, (confirm) => {
-                if (confirm.toLowerCase() === 'y') {
+                if (confirm === 'y') {
                     returnBooks(selectedBorrowIds);
                     console.log(`${selectedBorrowIds.length} book(s) returned.`);
                 }
@@ -66,20 +66,20 @@ function selectBorrowsToReturn(customerId, selectedBorrowIds, activeBorrows, cal
             return;
         }
 
-        const selectedBorrow = activeBorrows.find(borrow => borrow.id === borrowId);
+        const selectedBorrow = activeBorrows.find(borrow => borrow.id === input);
         if (!selectedBorrow) {
             console.log("Borrow record not found!");
             selectBorrowsToReturn(customerId, selectedBorrowIds, activeBorrows, callBackToMain);
             return;
         }
 
-        if (selectedBorrowIds.includes(borrowId)) {
+        if (selectedBorrowIds.includes(input)) {
             console.log("This borrow is already selected!");
             selectBorrowsToReturn(customerId, selectedBorrowIds, activeBorrows, callBackToMain);
             return;
         }
 
-        selectedBorrowIds.push(borrowId);
+        selectedBorrowIds.push(input);
         console.log(`Borrow record added to return list.`);
         selectBorrowsToReturn(customerId, selectedBorrowIds, activeBorrows, callBackToMain);
     });

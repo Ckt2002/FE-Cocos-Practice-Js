@@ -9,15 +9,10 @@ export default function addBookMenu(callbackToMain) {
     SetTitle("Add new book", null);
 
     rl.question('Enter book title (or 0 to cancel): ', (input) => {
-        switch (input) {
-            case '0':
-                callbackToMain();
-                break;
-            default:
-                addBook(input);
-                callbackToMain();
-                break;
+        if (input !== '0') {
+            addBook(input);
         }
+        callbackToMain();
     })
 }
 
