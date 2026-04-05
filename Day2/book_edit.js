@@ -15,7 +15,7 @@ export default function editBookMenu(callBackToMain) {
 
     SetTitle("Edit book", booksName);
 
-    rl.question('Enter 0 to exit editing or enter book title to start editing: ', (input) => {
+    rl.question('Enter book title (or 0 to cancel): ', (input) => {
         switch (input) {
             case '0':
                 callBackToMain();
@@ -40,7 +40,7 @@ function editBookForm(callBackToMenu, bookData, saveCallBack) {
 
     SetTitle(`${bookData.id} - ${bookData.title}`, null);
 
-    rl.question('Enter 0 to return or enter new title to change book title: ', (input) => {
+    rl.question('Enter new title (or 0 to cancel): ', (input) => {
         switch (input) {
             case '0':
                 callBackToMenu();

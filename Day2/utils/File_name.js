@@ -1,6 +1,7 @@
 const FileName = {
     Books: "Books",
-    Customer: "Customer"
+    Customer: "Customer",
+    Borrow: "Borrow"
 };
 
 export default FileName;

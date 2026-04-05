@@ -8,7 +8,7 @@ import { createNewFile, readFile, checkFile } from "./file_json.js";
 export default function addBookMenu(callbackToMain) {
     SetTitle("Add new book", null);
 
-    rl.question('Enter 0 to cancel or book title: ', (input) => {
+    rl.question('Enter book title (or 0 to cancel): ', (input) => {
         switch (input) {
             case '0':
                 callbackToMain();
@@ -29,7 +29,7 @@ function addBook(bookName) {
         const content = readFile(FileName.Books);
         const obj = JSON.parse(content);
 
-        for (let book of obj.books) {
+        for (let book of obj.bookArr) {
             const newBook = new Book();
             newBook.applyData(book);
             books.addBook(newBook);

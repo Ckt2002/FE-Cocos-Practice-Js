@@ -39,7 +39,7 @@ function removeConfirm(callBackToMenu, booksArr, bookData, saveCallBack) {
         return;
     }
 
-    rl.question('Enter anythings to accept removing or "n" to cancel: ', (input) => {
+    rl.question('Enter anythings to accept (or n to cancel): ', (input) => {
         switch (input) {
             case 'n':
                 callBackToMenu();

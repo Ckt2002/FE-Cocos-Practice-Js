@@ -5,6 +5,8 @@ import addBookMenu from './book_add.js';
 import removeBookMenu from './book_remove.js';
 import showBookMenu from './book_show.js';
 import addCustomerMenu from './customer_add.js';
+import addBorrowMenu from './borrow_add.js';
+import returnBorrowMenu from './borrow_return.js';
 
 function showMainPage() {
     SetTitle("Choose an action", [
@@ -15,7 +17,9 @@ function showMainPage() {
         "3-Remove book",
         "4-View book",
         "\nCustomer Actions:",
-        "5-Add Customer"
+        "5-Add Customer",
+        "\nBorrow Actions:",
+        "6-Add Borrow"
     ]);
 
     rl.question('Choose an action: ', (iput) => {
@@ -39,6 +43,13 @@ function showMainPage() {
 
             case '5':
                 addCustomerMenu(showMainPage);
+                break;
+
+            case '6':
+                addBorrowMenu(showMainPage);
+                break;
+            case '7':
+                returnBorrowMenu(showMainPage);
                 break;
 
             default:

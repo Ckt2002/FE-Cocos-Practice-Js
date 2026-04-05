@@ -4,11 +4,9 @@ export default class Customers {
     }
 
     addCustomer(newCustomer) {
-        for (let customer of this.customerArr) {
-            if (customer.fullName === newCustomer.fullName) {
-                return;
-            }
-        }
-        this.customerArr.push(newCustomer);
+        const customerExist = this.customerArr.find(
+            customer => customer.fullName === newCustomer.fullName) || null;
+        if (customerExist === null)
+            this.customerArr.push(newCustomer);
     }
 }

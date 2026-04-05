@@ -4,11 +4,8 @@ export default class Books {
     }
 
     addBook(newBook) {
-        for (let book of this.bookArr) {
-            if (book.getTitle() === newBook.getTitle()) {
-                return;
-            }
-        }
-        this.bookArr.push(newBook);
+        const bookExist = this.bookArr.find(book => book.getTitle() === newBook.getTitle()) || null;
+        if (bookExist === null)
+            this.bookArr.push(newBook);
     }
 }

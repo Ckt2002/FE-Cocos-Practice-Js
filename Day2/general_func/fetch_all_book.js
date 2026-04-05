@@ -8,7 +8,7 @@ export default function fetchAllBooks() {
     const obj = JSON.parse(content);
     const books = new Books();
 
-    for (let book of obj.books) {
+    for (let book of obj.bookArr) {
         const newBook = new Book();
         newBook.applyData(book);
         books.addBook(newBook);

@@ -11,7 +11,7 @@ export default function addCustomerMenu(callBackToMain) {
     rl.question("Enter full name: ", (fullName) => {
         rl.question("Enter age: ", (age) => {
             rl.question("Enter address: ", (address) => {
-                rl.question('Enter 0 to cancel or any keys to continue: ', (input) => {
+                rl.question('Enter anykey to continue (or 0 to cancel): ', (input) => {
                     switch (input) {
                         case '0':
                             callBackToMain();
