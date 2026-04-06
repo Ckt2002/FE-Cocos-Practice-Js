@@ -1,5 +1,5 @@
-import SetTitle from "./setup_title.js";
-import rl from "./setup_readline.js";
+import SetTitle from "./utils/setup_title.js";
+import rl from "./utils/setup_readline.js";
 import Book from "./data/book_data.js";
 import Books from "./data/books_data.js";
 import FileName from "./utils/File_name.js";

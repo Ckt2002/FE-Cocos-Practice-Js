@@ -1,8 +1,8 @@
-import SetTitle from "./setup_title.js";
+import SetTitle from "./utils/setup_title.js";
 import fetchAllBooks from "./general_func/fetch_all_book.js";
 import findBook from "./general_func/find_book.js";
 import saveBook from "./general_func/save_book.js";
-import rl from "./setup_readline.js";
+import rl from "./utils/setup_readline.js";
 
 export default function removeBookMenu(callBackToMain) {
     const books = fetchAllBooks();
