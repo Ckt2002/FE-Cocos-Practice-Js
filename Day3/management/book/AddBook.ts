@@ -2,35 +2,31 @@ import AllBooks from "../../data/AllBooks";
 import Book from '../../data/Book';
 import { EFileName } from "../../enum/EFileName";
 import rl from "../../utils/InputManager";
+import question from "../../utils/Question";
 import SetupTitle from "../../utils/SetupTitle";
 import CheckExist from "../file/CheckExitst";
 import ReadFile from "../file/Read";
 import SaveBook from "./SaveBook";
 
-export default function AddBookMenu(backToMain: any): void {
+export default async function AddBookMenu(backToMain: any): Promise<void> {
     SetupTitle("Add new book", null);
 
-    rl.question('Enter title: ', (title) => {
-        rl.question('Enter author:', (author) => {
-            rl.question('Enter type:', (type) => {
-                rl.question('Enter release year:', (releaseYear) => {
-                    rl.question('Enter bookshelf number:', (bookshelfNumber) => {
-                        rl.question('Enter anykey to continue (or 0 to cancel): ', (input) => {
-                            if (input !== '0') {
-                                if (!title || title === '' || !author || author === '' || !type || type === '' || !releaseYear || releaseYear === '' || !bookshelfNumber || bookshelfNumber === '') {
-                                    console.log("Please enter all informations.");
-                                    AddBookMenu(backToMain);
-                                    return;
-                                }
-                                addBook(title, author, type, +releaseYear, +bookshelfNumber);
-                            }
-                            backToMain();
-                        });
-                    })
-                })
-            })
-        })
-    })
+    const title = await question('Enter title: ');
+    const author = await question('Enter author: ');
+    const type = await question('Enter type: ');
+    const releaseYear = await question('Enter release year: ');
+    const bookshelfNumber = await question('Enter bookshelf number: ');
+    const input = await question('Enter anykey to continue (or 0 to cancel): ');
+
+    if (input !== '0') {
+        if (!title || title === '' || !author || author === '' || !type || type === '' || !releaseYear || releaseYear === '' || !bookshelfNumber || bookshelfNumber === '') {
+            console.log("Please enter all informations.");
+            await AddBookMenu(backToMain);
+            return;
+        }
+        addBook(title, author, type, +releaseYear, +bookshelfNumber);
+    }
+    backToMain();
 }
 
 function addBook(title: string, author: string, type: string, releaseYear: number, bookShelfNumber: number): void {

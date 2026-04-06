@@ -1,8 +1,9 @@
 import Customer from "../../data/Customer";
 import rl from "../../utils/InputManager";
+import question from "../../utils/Question";
 import SetupTitle from "../../utils/SetupTitle";
 import FetchAllCustomers from "./FetchCustomer";
-import { FindCustomerByID } from "./FIndCustomer";
+import { FindCustomerByID } from "./FindCustomer";
 import SaveCustomer from "./SaveCustomer";
 
 export default function EditCustomerMenu(callBackToMain: any): void {
@@ -29,7 +30,7 @@ export default function EditCustomerMenu(callBackToMain: any): void {
     });
 }
 
-function EditCustomerForm(callBackToMenu: any, customerData: Customer | undefined, saveCallBack: any): void {
+async function EditCustomerForm(callBackToMenu: any, customerData: Customer | undefined, saveCallBack: any): Promise<void> {
     if (!customerData) {
         console.log("Can't find customer. Try again.");
         callBackToMenu();
@@ -39,28 +40,20 @@ function EditCustomerForm(callBackToMenu: any, customerData: Customer | undefine
     const bookInfo: string[] = [customerData.id, customerData.fullName, customerData.age.toString(), customerData.address];
     SetupTitle(`${customerData.id} - ${customerData.fullName}`, bookInfo);
 
-    rl.question("Enter ID:", (id) => {
-        rl.question("Enter full name: ", (fullName) => {
-            rl.question("Enter age: ", (age) => {
-                rl.question("Enter address: ", (address) => {
-                    rl.question('Enter anykey to continue (or 0 to cancel): ', (input) => {
-                        if (input !== '0') {
-                            if (!id || id === '')
-                                id = customerData.id;
-                            if (!fullName || fullName === '')
-                                fullName = customerData.fullName;
-                            if (!age || age === '')
-                                age = customerData.age.toString();
-                            if (!address || address === '')
-                                address = customerData.address;
+    const id = await question("Enter ID: ");
+    const fullName = await question("Enter full name: ");
+    const age = await question("Enter age: ");
+    const address = await question("Enter address: ");
+    const input = await question('Enter anykey to continue (or 0 to cancel): ');
 
-                            customerData.applyData(id, fullName, +age, address);
-                        }
-                        saveCallBack();
-                        callBackToMenu();
-                    });
-                });
-            });
-        });
-    });
+    if (input !== '0') {
+        customerData.applyData(
+            id || customerData.id,
+            fullName || customerData.fullName,
+            +(age || customerData.age.toString()),
+            address || customerData.address
+        );
+    }
+    saveCallBack();
+    callBackToMenu();
 }

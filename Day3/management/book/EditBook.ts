@@ -1,5 +1,6 @@
 import Book from "../../data/Book";
 import rl from "../../utils/InputManager";
+import question from "../../utils/Question";
 import SetupTitle from "../../utils/SetupTitle";
 import FetchAllBooks from './FectchBook';
 import { FindBookByTitle } from "./FindBook";
@@ -38,32 +39,27 @@ function editBookForm(callBackToMenu: any, bookData: Book | undefined, saveCallB
     const bookInfo: string[] = [bookData.author, bookData.type, bookData.releaseYear.toString(), bookData.bookShelfNumber.toString()];
     SetupTitle(`${bookData.id} - ${bookData.title}`, bookInfo);
 
-    rl.question('Enter title: ', (title) => {
-        rl.question('Enter author:', (author) => {
-            rl.question('Enter type:', (type) => {
-                rl.question('Enter release year:', (releaseYear) => {
-                    rl.question('Enter bookshelf number:', (bookshelfNumber) => {
-                        rl.question('Enter anykey to continue (or 0 to cancel): ', (input) => {
-                            if (input !== '0') {
-                                if (!title || title === '')
-                                    title = bookData.title;
-                                if (!author || author === '')
-                                    author = bookData.author;
-                                if (!type || type === '')
-                                    type = bookData.type;
-                                if (!releaseYear || releaseYear === '')
-                                    releaseYear = bookData.releaseYear.toString();
-                                if (!bookshelfNumber || bookshelfNumber === '')
-                                    bookshelfNumber = bookData.bookShelfNumber.toString();
+    editBookFormAsync(callBackToMenu, bookData, saveCallBack);
+}
 
-                                bookData.applyData(bookData.id, title, author, type, +releaseYear, +bookshelfNumber);
-                            }
-                            saveCallBack();
-                            callBackToMenu();
-                        });
-                    });
-                });
-            });
-        });
-    });
+async function editBookFormAsync(callBackToMenu: any, bookData: Book, saveCallBack: any): Promise<void> {
+    const title = await question('Enter title: ');
+    const author = await question('Enter author: ');
+    const type = await question('Enter type: ');
+    const releaseYear = await question('Enter release year: ');
+    const bookshelfNumber = await question('Enter bookshelf number: ');
+    const input = await question('Enter anykey to continue (or 0 to cancel): ');
+
+    if (input !== '0') {
+        bookData.applyData(
+            bookData.id,
+            title || bookData.title,
+            author || bookData.author,
+            type || bookData.type,
+            +(releaseYear || bookData.releaseYear.toString()),
+            +(bookshelfNumber || bookData.bookShelfNumber.toString())
+        );
+    }
+    saveCallBack();
+    callBackToMenu();
 }

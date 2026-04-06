@@ -33,7 +33,7 @@ function displayCustomerBorrows(customerId: string, callBackToMain: any) {
     const activeBorrows = new AllBorrows();
     for (let currentBorrow of obj.borrowArr) {
         if (currentBorrow.customerId === customerId && !currentBorrow.returnDate) {
-            const borrow = new Borrow(currentBorrow.id, customerId, currentBorrow.bookId, currentBorrow.borrowDate);
+            const borrow = new Borrow(customerId, currentBorrow.bookId, currentBorrow.borrowDate, currentBorrow.id);
             activeBorrows.addNewBorrow(borrow);
         }
     }
@@ -97,7 +97,7 @@ function returnBooks(borrowIds: string[]) {
     const obj = JSON.parse(content);
 
     for (let borrow of obj.borrowArr) {
-        const borrowObj = new Borrow(borrow.id, borrow.customerId, borrow.bookId, borrow.borrowDate);
+        const borrowObj = new Borrow(borrow.customerId, borrow.bookId, borrow.borrowDate, borrow.id);
         if (borrowIds.includes(borrow.id)) {
             borrowObj.markAsReturned();
         }

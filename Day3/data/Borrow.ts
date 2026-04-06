@@ -5,7 +5,7 @@ export default class Borrow {
     borrowDate: string;
     returnDate: string | null;
 
-    constructor(id = "id" + Math.random().toString(16).slice(2), customerId: string, bookId: string, borrowDate = new Date().toISOString().split('T')[0]) {
+    constructor(customerId: string, bookId: string, borrowDate = new Date().toISOString().split('T')[0], id = "id" + Math.random().toString(16).slice(2)) {
         this.id = id;
         this.customerId = customerId;
         this.bookId = bookId;
