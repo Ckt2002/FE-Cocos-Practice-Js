@@ -1,0 +1,28 @@
+{
+	"bookArr": [
+		{
+			"id": "id364052656765364212",
+			"title": "abcde",
+			"author": "hak",
+			"type": "hor",
+			"releaseYear": 2002,
+			"bookShelfNumber": 21
+		},
+		{
+			"id": "id341204675073362536",
+			"title": "hello 2",
+			"author": "iehfieh",
+			"type": "ihfeifh",
+			"releaseYear": 2023,
+			"bookShelfNumber": 12
+		},
+		{
+			"id": "id477324671243654016",
+			"title": "khfiehfie",
+			"author": "ugeufge",
+			"type": "fugeu",
+			"releaseYear": 2023,
+			"bookShelfNumber": 100
+		}
+	]
+}
