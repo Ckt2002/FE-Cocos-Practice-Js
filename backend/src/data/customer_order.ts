@@ -1,5 +1,6 @@
 import type Customer from './customer.js';
-import type Staff from './Staff.js';
+import type Staff from './staff.js';
+
 export default class CustomerOrder {
     id: string;
     idCustomer: Customer;

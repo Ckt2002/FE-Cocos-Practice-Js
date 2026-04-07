@@ -1,0 +1,10 @@
+import type Provider from './provider.js';
+import type Staff from './staff.js';
+export default class PurchaseOrder {
+    id: string;
+    createdDate: Date;
+    idManager: Staff;
+    idProvider: Provider;
+    constructor(id: string, createdDate: Date, idManager: Staff, idProvider: Provider);
+}
+//# sourceMappingURL=purchase_order.d.ts.map
