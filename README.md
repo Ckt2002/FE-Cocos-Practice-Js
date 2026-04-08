@@ -82,3 +82,11 @@ Handles customer transactions and order cancellations.
 | **CustomerOrderDetail** | `ID`, `IDOrderFC`, `IDProduct`, `quantity`, `price`         |
 
 > **Note:** The `cancelReason` field is crucial for analyzing churn and inventory issues.
+
+## Run app
+### 1. Backend:
+1. run **'cd backend'**.
+2. run **'npm install'**.
+3. run **'npm install @prisma/adapter-pg pg'** and **'npm install -D @types/pg'**.
+4. run **'npx prisma generate'**.
+5. finally, run backend by **'npm run dev'**.
