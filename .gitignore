@@ -1,5 +1,6 @@
 # Dependency directories
 backend/node_modules/
+backend/package-lock.json
 frontend/node_modules/
 
 # Environment variables (Secrets)
@@ -17,3 +18,4 @@ Thumbs.db
 # Build folders (if using React/Vue in frontend)
 frontend/build/
 frontend/dist/
+backend/package-lock.json
