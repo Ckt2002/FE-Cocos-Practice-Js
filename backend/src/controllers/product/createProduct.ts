@@ -7,10 +7,10 @@ export const createNewProduct = async (req: Request, res: Response) => {
             name,
             price,
             quantity,
-            color,
-            type,
-            brand,
-            size
+            colorId,
+            typeId,
+            brandId,
+            sizeId
         } = req.body;
 
         if (!name) {
@@ -26,10 +26,10 @@ export const createNewProduct = async (req: Request, res: Response) => {
                 name,
                 price,
                 quantity,
-                color,
-                type,
-                brand,
-                size
+                colorId,
+                typeId,
+                brandId,
+                sizeId
             },
         });
 
