@@ -3,7 +3,14 @@ import prisma from '../../db/prisma.js';
 
 export const getAllProducts = async (req: Request, res: Response) => {
     try {
-        const products = await prisma.product.findMany();
+        const products = await prisma.product.findMany({
+            include: {
+                brand: true,
+                type: true,
+                color: true,
+                size: true
+            }
+        });
 
         res.json({
             success: true,
