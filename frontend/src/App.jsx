@@ -8,6 +8,7 @@ import ColorsPage from './pages/admin/ColorPage';
 import ProductsPage from './pages/admin/ProductsPage';
 import StaffPage from './pages/admin/StaffPage';
 import ProvidersPage from './pages/admin/ProviderPage';
+import OrderPage from './pages/admin/OrderPage';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
 
         <Route path="/admin-dashboard" element={<AdminDashboard />}>
           <Route path="/admin-dashboard/staffs" element={<StaffPage />} />
-          {/* <Route path="/admin-dashboard/orders" element={<AdminLayout><h1>Provider Orders</h1></AdminLayout>} />*/}
+          <Route path="/admin-dashboard/orders" element={<OrderPage />} />
           <Route path="/admin-dashboard/products" element={<ProductsPage />} />
           <Route path="/admin-dashboard/types" element={<ProductTypesPage />} />
           <Route path="/admin-dashboard/sizes" element={<SizesPage />} />

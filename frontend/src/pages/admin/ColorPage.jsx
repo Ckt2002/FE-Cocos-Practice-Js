@@ -65,29 +65,4 @@ const ColorsPage = () => {
     );
 };
 
-
-// const ColorsPage = () => {
-//     const [data, setData] = useState([]); // Called 'data' to avoid naming conflicts
-//     const [loading, setLoading] = useState(true);
-
-//     useEffect(() => {
-//         fetch(`${import.meta.env.VITE_API_BASE_URL}/color`)
-//             .then((res) => res.json())
-//             .then((result) => {
-//                 if (result.success) {
-//                     setData(result.data);
-//                 }
-//                 setLoading(false);
-//             })
-//             .catch((err) => {
-//                 console.error("Fetch error:", err);
-//                 setLoading(false);
-//             });
-//     }, []);
-
-//     if (loading) return <div style={{ padding: "20px" }}>Loading...</div>;
-
-//     return <SimpleTable title="Color" data={data} />;
-// };
-
 export default ColorsPage;
