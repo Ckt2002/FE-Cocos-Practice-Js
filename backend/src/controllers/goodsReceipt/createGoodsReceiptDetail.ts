@@ -39,3 +39,40 @@ export const createNewGoodsReceiptDetail = async (req: Request, res: Response) =
         });
     }
 };
+
+export const createGoodsReceiptDetailFunc = async (goodsReceiptId: string, productId: string, quantity: number, price: number) => {
+    try {
+
+        if (!goodsReceiptId || !productId || !quantity || !price) {
+            return {
+                success: false,
+                message: 'All required fields must be provided',
+            };
+        }
+
+        const detail = await prisma.goodsReceiptDetail.create({
+            data: {
+                goodsReceiptId,
+                productId,
+                quantity,
+                price,
+            },
+            include: {
+                goodsReceipt: true,
+                product: true,
+            },
+        });
+
+        return {
+            success: true,
+            message: 'Goods receipt detail created successfully',
+            data: detail,
+        };
+    } catch (error) {
+        return {
+            success: false,
+            message: 'Error creating goods receipt detail',
+            error: error instanceof Error ? error.message : error,
+        };
+    }
+};

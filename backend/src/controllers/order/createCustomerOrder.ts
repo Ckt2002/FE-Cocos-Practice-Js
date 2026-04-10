@@ -1,9 +1,10 @@
 import type { Request, Response } from 'express';
 import prisma from '../../db/prisma.js';
+import { addNewCustomerOrderDetailFunc } from './createCustomerOrderDetail.js';
 
 export const createNewCustomerOrder = async (req: Request, res: Response) => {
     try {
-        const { customerId, totalPrice, staffId, cancelReason } = req.body;
+        const { customerId, totalPrice, staffId, customerOrderDetails } = req.body;
 
         if (!customerId || !totalPrice || !staffId) {
             res.status(400).json({
@@ -18,13 +19,23 @@ export const createNewCustomerOrder = async (req: Request, res: Response) => {
                 customerId,
                 totalPrice,
                 staffId,
-                cancelReason: cancelReason || null,
+                cancelReason: null,
             },
             include: {
                 customer: true,
                 staff: true,
             },
         });
+        for (let detail of customerOrderDetails) {
+            const addDetail = await addNewCustomerOrderDetailFunc(customerOrder.id, detail.productId, detail.quantity, detail.price);
+            if (!addDetail.success) {
+                res.status(500).json({
+                    success: false,
+                    message: addDetail.message || 'Error creating customer order.',
+                });
+                return;
+            }
+        }
 
         res.status(201).json({
             success: true,

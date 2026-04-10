@@ -27,7 +27,6 @@ const SimpleTable = ({ title, data = [], onAdd, onEdit }) => {
                   <button style={styles.editBtn} onClick={() => onEdit(item)}>
                     Edit
                   </button>
-                  <button style={styles.deleteBtn}>Delete</button>
                 </td>
               </tr>
             ))

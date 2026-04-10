@@ -6,9 +6,9 @@ import OrderForm from "../../components/Admin/OrderForm";
 
 
 const TABS = [
-    { id: "customer_orders", label: "Customer Orders", endpoint: "/orders/customer", type: "customer" },
-    { id: "purchase_orders", label: "Provider Orders", endpoint: "/orders/purchase", type: "purchase" },
-    { id: "goods_receipts", label: "Goods Receipts", endpoint: "/inventory/receipts", type: "receipt" }
+    { id: "customer_orders", label: "Customer Orders", endpoint: "/customerOrder", type: "customer" },
+    { id: "purchase_orders", label: "Purchase Order", endpoint: "/purchaseOrder", type: "purchase" },
+    { id: "goods_receipts", label: "Goods Receipts", endpoint: "/goodsReceipt", type: "receipt" }
 ];
 
 const OrdersPage = () => {

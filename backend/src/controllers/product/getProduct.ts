@@ -81,3 +81,45 @@ export const getProductByName = async (req: Request, res: Response) => {
         });
     }
 };
+
+export const updateProductQuantityFunc = async (id: string, quantity: number) => {
+    try {
+        if (!id) {
+            return {
+                success: false,
+                message: 'Product Id is required.',
+            };
+        }
+
+        const product = await prisma.product.findFirst({
+            where: { id }
+        });
+
+        const newQuantity = product?.quantity as number - quantity;
+
+        if (newQuantity < 0) {
+            return {
+                success: false,
+                message: "Don't have enough quantity",
+            };
+        }
+
+        await prisma.product.update({
+            where: { id },
+            data: {
+                quantity: newQuantity
+            }
+        });
+
+        return {
+            success: true,
+            data: product?.quantity
+        };
+    } catch (error) {
+        return {
+            success: false,
+            message: 'Error fetching product quantity',
+            error: error instanceof Error ? error.message : error,
+        };
+    }
+};

@@ -1,9 +1,10 @@
 import type { Request, Response } from 'express';
 import prisma from '../../db/prisma.js';
+import { createGoodsReceiptDetailFunc } from './createGoodsReceiptDetail.js';
 
 export const createNewGoodsReceipt = async (req: Request, res: Response) => {
     try {
-        const { totalPrice, staffId, providerId } = req.body;
+        const { totalPrice, staffId, providerId, goodsReceiptDetails } = req.body;
 
         if (!totalPrice || !staffId || !providerId) {
             res.status(400).json({
@@ -24,6 +25,16 @@ export const createNewGoodsReceipt = async (req: Request, res: Response) => {
                 provider: true,
             },
         });
+
+        for (let detail of goodsReceiptDetails) {
+            const receiptRes = await createGoodsReceiptDetailFunc(receipt.id, detail.productId, detail.quantity, detail.price);
+            if (!receiptRes.success) {
+                res.status(400).json({
+                    success: false,
+                    message: 'Error creating goods receipt'
+                });
+            }
+        }
 
         res.status(201).json({
             success: true,

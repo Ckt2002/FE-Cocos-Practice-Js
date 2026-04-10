@@ -38,3 +38,39 @@ export const createNewPurchaseOrderDetail = async (req: Request, res: Response) 
         });
     }
 };
+
+
+export const createNewPurchaseDetailFunc = async (purchaseOrderId: string, productId: string, quantity: number) => {
+    try {
+        if (!purchaseOrderId || !productId || !quantity) {
+            return {
+                success: false,
+                message: 'All required fields must be provided',
+            };
+        }
+
+        const detail = await prisma.purchaseOrderDetail.create({
+            data: {
+                purchaseOrderId,
+                productId,
+                quantity,
+            },
+            include: {
+                purchaseOrder: true,
+                product: true,
+            },
+        });
+
+        return {
+            success: true,
+            message: 'Purchase order detail created successfully',
+            data: detail,
+        };
+    } catch (error) {
+        return {
+            success: false,
+            message: 'Error creating purchase order detail',
+            error: error instanceof Error ? error.message : error,
+        };
+    }
+};
