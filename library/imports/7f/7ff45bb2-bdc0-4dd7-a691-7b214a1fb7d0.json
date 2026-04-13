@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Popup_01_Border",
+    "texture": "dea25807-4cbe-462b-97d5-5fc0ad3b84d2",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      247,
+      299
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      247,
+      299
+    ],
+    "capInsets": [
+      100,
+      120,
+      100,
+      120
+    ]
+  }
+}

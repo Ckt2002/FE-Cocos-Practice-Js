@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Title_Ribbon_02_Purple",
+    "texture": "bd2ad06e-96ad-42ea-8f27-25b9f7f92f49",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      249,
+      98
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      249,
+      98
+    ],
+    "capInsets": [
+      122,
+      45,
+      122,
+      44
+    ]
+  }
+}

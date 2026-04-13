@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Label_Flag_01_Single_Blue",
+    "texture": "2ca0fe3d-01d2-4d48-a624-e4fea9840052",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      52,
+      75
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      52,
+      75
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

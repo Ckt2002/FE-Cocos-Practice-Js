@@ -1,0 +1,240 @@
+{
+  "projectPath": "/Users/user/Documents/Learning_Cocos_FE",
+  "actualPlatform": "web-mobile",
+  "mtimes": {
+    "9f7253c9-ac8f-4a0f-b798-0655a5ec162b": {
+      "assetMtime": 1776076080140,
+      "metaMtime": 1776076427257
+    },
+    "3d9f8ebb-31f3-4418-a4e9-13965bf73808": {
+      "assetMtime": 1776074401207,
+      "metaMtime": 1776074401218
+    },
+    "1b1ee0a2-a852-46c3-bed4-c79770d2f03e": {
+      "assetMtime": 1776074401207,
+      "metaMtime": 1776074401218
+    },
+    "6cdb40af-5f7d-4540-8119-f5be650cb659": {
+      "assetMtime": 1776071123486,
+      "metaMtime": 1776074082652
+    },
+    "1c29c7c1-bd1f-4c6a-8151-5ce6a51fe7e3": {
+      "assetMtime": 1776071123486,
+      "metaMtime": 1776074082652
+    },
+    "7ff45bb2-bdc0-4dd7-a691-7b214a1fb7d0": {
+      "assetMtime": 1776072288063,
+      "metaMtime": 1776075438607
+    },
+    "dea25807-4cbe-462b-97d5-5fc0ad3b84d2": {
+      "assetMtime": 1776072288063,
+      "metaMtime": 1776075438607
+    },
+    "c3abb644-2c65-40d1-9d46-8e4f2c1b8137": {
+      "assetMtime": 1776072200099,
+      "metaMtime": 1776074082675
+    },
+    "bd2ad06e-96ad-42ea-8f27-25b9f7f92f49": {
+      "assetMtime": 1776072200099,
+      "metaMtime": 1776074082675
+    },
+    "d22bb1b5-7960-43cf-b03e-8f5e59b897a7": {
+      "assetMtime": 1776074343778,
+      "metaMtime": 1776074343789
+    },
+    "7a5a35f8-4ad2-4009-baac-a48e89deb437": {
+      "assetMtime": 1776074343778,
+      "metaMtime": 1776074343789
+    },
+    "f261eac3-49ce-4ea7-a9c3-f4bd847759d1": {
+      "assetMtime": 1776071664018,
+      "metaMtime": 1776074082651
+    },
+    "2ca0fe3d-01d2-4d48-a624-e4fea9840052": {
+      "assetMtime": 1776071664018,
+      "metaMtime": 1776074082651
+    }
+  },
+  "result": {
+    "name": "ImagesAtlas",
+    "width": 4096,
+    "height": 4096,
+    "ver": "1.2.5",
+    "uuid": "9f7253c9-ac8f-4a0f-b798-0655a5ec162b",
+    "importer": "auto-atlas",
+    "maxWidth": 4096,
+    "maxHeight": 4096,
+    "padding": 2,
+    "compressionLevel": 6,
+    "allowRotation": true,
+    "forceSquared": false,
+    "powerOfTwo": false,
+    "algorithm": "MaxRects",
+    "format": "png",
+    "quality": 80,
+    "contourBleed": true,
+    "paddingBleed": true,
+    "filterUnused": true,
+    "packable": false,
+    "premultiplyAlpha": false,
+    "filterMode": "bilinear",
+    "platformSettings": {},
+    "subMetas": {},
+    "bleed": 1,
+    "atlases": [
+      {
+        "files": [
+          {
+            "name": "Popup_01_Border",
+            "uuid": "7ff45bb2-bdc0-4dd7-a691-7b214a1fb7d0",
+            "textureUuid": "dea25807-4cbe-462b-97d5-5fc0ad3b84d2",
+            "path": "/Users/user/Documents/Learning_Cocos_FE/temp/trimImages/spritesheet_js_1776076442001_image_2.png",
+            "trim": {
+              "x": 3,
+              "y": 3,
+              "width": 247,
+              "height": 299,
+              "rotatedWidth": 247,
+              "rotatedHeight": 299
+            },
+            "rawWidth": 247,
+            "rawHeight": 299,
+            "width": 253,
+            "height": 305,
+            "originalPath": "/Users/user/Documents/Learning_Cocos_FE/library/imports/de/dea25807-4cbe-462b-97d5-5fc0ad3b84d2.png",
+            "x": 0,
+            "y": 0,
+            "rotatedWidth": 253,
+            "rotatedHeight": 305
+          },
+          {
+            "name": "Title_Ribbon_02_Purple",
+            "uuid": "c3abb644-2c65-40d1-9d46-8e4f2c1b8137",
+            "textureUuid": "bd2ad06e-96ad-42ea-8f27-25b9f7f92f49",
+            "path": "/Users/user/Documents/Learning_Cocos_FE/temp/trimImages/spritesheet_js_1776076442001_image_3.png",
+            "trim": {
+              "x": 3,
+              "y": 308,
+              "width": 249,
+              "height": 98,
+              "rotatedWidth": 249,
+              "rotatedHeight": 98
+            },
+            "rawWidth": 249,
+            "rawHeight": 98,
+            "width": 255,
+            "height": 104,
+            "originalPath": "/Users/user/Documents/Learning_Cocos_FE/library/imports/bd/bd2ad06e-96ad-42ea-8f27-25b9f7f92f49.png",
+            "x": 0,
+            "y": 305,
+            "rotatedWidth": 255,
+            "rotatedHeight": 104
+          },
+          {
+            "name": "CardFrame_01_BorderGray_DecoRight",
+            "uuid": "3d9f8ebb-31f3-4418-a4e9-13965bf73808",
+            "textureUuid": "1b1ee0a2-a852-46c3-bed4-c79770d2f03e",
+            "path": "/Users/user/Documents/Learning_Cocos_FE/temp/trimImages/spritesheet_js_1776076442001_image_0.png",
+            "trim": {
+              "x": 3,
+              "y": 412,
+              "width": 113,
+              "height": 113,
+              "rotatedWidth": 113,
+              "rotatedHeight": 113
+            },
+            "rawWidth": 113,
+            "rawHeight": 113,
+            "width": 119,
+            "height": 119,
+            "originalPath": "/Users/user/Documents/Learning_Cocos_FE/library/imports/1b/1b1ee0a2-a852-46c3-bed4-c79770d2f03e.png",
+            "x": 0,
+            "y": 409,
+            "rotatedWidth": 119,
+            "rotatedHeight": 119
+          },
+          {
+            "name": "CardFrame_01_BorderGray_DecoLeft",
+            "uuid": "d22bb1b5-7960-43cf-b03e-8f5e59b897a7",
+            "textureUuid": "7a5a35f8-4ad2-4009-baac-a48e89deb437",
+            "path": "/Users/user/Documents/Learning_Cocos_FE/temp/trimImages/spritesheet_js_1776076442001_image_4.png",
+            "trim": {
+              "x": 122,
+              "y": 412,
+              "width": 113,
+              "height": 112,
+              "rotatedWidth": 113,
+              "rotatedHeight": 112
+            },
+            "rawWidth": 113,
+            "rawHeight": 112,
+            "width": 119,
+            "height": 118,
+            "originalPath": "/Users/user/Documents/Learning_Cocos_FE/library/imports/7a/7a5a35f8-4ad2-4009-baac-a48e89deb437.png",
+            "x": 119,
+            "y": 409,
+            "rotatedWidth": 119,
+            "rotatedHeight": 118
+          },
+          {
+            "name": "Popup_02_Single",
+            "uuid": "6cdb40af-5f7d-4540-8119-f5be650cb659",
+            "textureUuid": "1c29c7c1-bd1f-4c6a-8151-5ce6a51fe7e3",
+            "path": "/Users/user/Documents/Learning_Cocos_FE/temp/trimImages/spritesheet_js_1776076442001_image_1.png",
+            "trim": {
+              "x": 122,
+              "y": 530,
+              "width": 90,
+              "height": 90,
+              "rotatedWidth": 90,
+              "rotatedHeight": 90
+            },
+            "rawWidth": 90,
+            "rawHeight": 90,
+            "width": 96,
+            "height": 96,
+            "originalPath": "/Users/user/Documents/Learning_Cocos_FE/library/imports/1c/1c29c7c1-bd1f-4c6a-8151-5ce6a51fe7e3.png",
+            "x": 119,
+            "y": 527,
+            "rotatedWidth": 96,
+            "rotatedHeight": 96
+          },
+          {
+            "name": "Label_Flag_01_Single_Blue",
+            "uuid": "f261eac3-49ce-4ea7-a9c3-f4bd847759d1",
+            "textureUuid": "2ca0fe3d-01d2-4d48-a624-e4fea9840052",
+            "path": "/Users/user/Documents/Learning_Cocos_FE/temp/trimImages/spritesheet_js_1776076442001_image_5.png",
+            "trim": {
+              "x": 3,
+              "y": 531,
+              "width": 52,
+              "height": 75,
+              "rotatedWidth": 52,
+              "rotatedHeight": 75
+            },
+            "rawWidth": 52,
+            "rawHeight": 75,
+            "width": 58,
+            "height": 81,
+            "originalPath": "/Users/user/Documents/Learning_Cocos_FE/library/imports/2c/2ca0fe3d-01d2-4d48-a624-e4fea9840052.png",
+            "x": 0,
+            "y": 528,
+            "rotatedWidth": 58,
+            "rotatedHeight": 81
+          }
+        ],
+        "width": 255,
+        "height": 623,
+        "name": "ImagesAtlas-1",
+        "imagePath": "/Users/user/Documents/Learning_Cocos_FE/temp/TexturePacker/build/native/assets/Import/ImagesAtlas.pac/ImagesAtlas-1.png",
+        "compressd": {
+          "suffix": [
+            ".png"
+          ],
+          "imagePathNoExt": "/Users/user/Documents/Learning_Cocos_FE/temp/TexturePacker/build/native/assets/Import/ImagesAtlas.pac/compressed/ImagesAtlas-1"
+        }
+      }
+    ],
+    "unpackedTextures": []
+  }
+}

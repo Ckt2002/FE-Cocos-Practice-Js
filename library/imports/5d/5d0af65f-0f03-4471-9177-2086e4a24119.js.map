@@ -1,0 +1,1 @@
+{"version":3,"sources":["assets/Script/FirstTest/CheckValid.ts"],"names":[],"mappings":";;;;;;AAAA,SAAwB,OAAO,CAAC,KAAiB;IAC7C,OAAO,KAAK,KAAK,IAAI,IAAI,KAAK,KAAK,SAAS,CAAC;AACjD,CAAC;AAFD,0BAEC","file":"","sourceRoot":"/","sourcesContent":["export default function IsValid(value: any | null) {\n    return value !== null && value !== undefined;\n}"]}
